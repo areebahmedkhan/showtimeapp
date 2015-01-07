@@ -112,6 +112,7 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
             else if(position == 0) {
                 Toast.makeText(this,"here we go.",Toast.LENGTH_LONG).show();
                 LoginWithFacebook();
+                return;
             }
 
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -148,7 +149,8 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
                                 //use it and move the class where we have to thanks :) :p
 
                             } else {
-                                Toast.makeText(getApplicationContext(), "User is null", Toast.LENGTH_LONG).show();
+
+                                Toast.makeText(getApplicationContext(), "User is null: "+response, Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -161,7 +163,6 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
         if(data == null) {
             Toast.makeText(this,"No internet or something went wrong.",Toast.LENGTH_LONG).show();
@@ -186,5 +187,8 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
             Log.i("Auth", "Code: " + requestCode + " resultCode: " + resultCode + " data: " + data);
             Toast.makeText(this,"Cannot login via twitter something went wrong.",Toast.LENGTH_LONG).show();
         }
+
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 }
