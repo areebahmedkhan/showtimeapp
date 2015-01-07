@@ -1,16 +1,24 @@
 package team.inventeaze.bookyourshow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.facebook.Request;
+import com.facebook.Response;
+import com.facebook.Session;
+import com.facebook.SessionState;
+import com.facebook.model.GraphUser;
 
 import team.inventeaze.bookyourshow.Adapter.LoginListAdapter;
 import team.inventeaze.bookyourshow.Fragments.LoginEmailFragment;
@@ -78,6 +86,8 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
                     overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
                 }
             break;
+
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -94,11 +104,16 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
             if (position == 1) {
                 fragment = new LoginEmailFragment();
             }
-            if (position == 2) {
+            else if (position == 2) {
                 fragment = new SignUpFragment();
                 isSignUpClick = true;
                 invalidateOptionsMenu();
             }
+            else if(position == 0) {
+                Toast.makeText(this,"here we go.",Toast.LENGTH_LONG).show();
+                LoginWithFacebook();
+            }
+
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_left_out, R.anim.push_right_in, R.anim.push_right_out);
             transaction.replace(R.id.content_frame, fragment);
@@ -108,5 +123,68 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
             Toast.makeText(this,"Not Set -- Null Pointer Exception Occurs",Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    public void LoginWithFacebook() {
+        // start Facebook Login
+        Session.openActiveSession(this, true, new Session.StatusCallback() {
+
+            // callback when session changes state
+            public void call(Session session, SessionState state, Exception exception) {
+                if (session.isOpened()) {
+                    // make request to;2 the /me API
+                    Request.executeMeRequestAsync(session, new Request.
+                            GraphUserCallback() {
+
+                        // callback after Graph API response with user object
+                        @Override
+                        public void onCompleted(GraphUser user, Response response) {
+                            if (user != null) {
+                                String username = user.getFirstName() + " " + user.getLastName();
+                                Toast.makeText(getApplicationContext(), "Success in fb login: " +username, Toast.LENGTH_LONG).show();
+
+
+                                //Areeb here we get the name and other information in user object
+                                //use it and move the class where we have to thanks :) :p
+
+                            } else {
+                                Toast.makeText(getApplicationContext(), "User is null", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(data == null) {
+            Toast.makeText(this,"No internet or something went wrong.",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(requestCode == 64206) {
+
+            if(Session.getActiveSession() == null) {
+                Toast.makeText(getApplicationContext(),"No Session Available",Toast.LENGTH_LONG).show();
+            }
+            else {
+
+                Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+
+            }
+
+            Log.i("Auth", "Code: " + requestCode + " resultCode: " + resultCode + " data: " + data);
+
+        }
+        else {
+            Log.i("Auth", "Code: " + requestCode + " resultCode: " + resultCode + " data: " + data);
+            Toast.makeText(this,"Cannot login via twitter something went wrong.",Toast.LENGTH_LONG).show();
+        }
     }
 }

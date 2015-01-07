@@ -7,6 +7,18 @@
         android:icon="@drawable/logo_new"
         android:label=""
         android:theme="@style/CustomActionBarTheme" >
+
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <!--login things -->
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:label="Login With Facebook" />
+
+
         <activity
             android:name=".splashScreen"
             android:label="@string/app_name"
