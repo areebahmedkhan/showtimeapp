@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="team.inventeaze.bookyourshow" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_new"
+        android:label=""
+        android:theme="@style/CustomActionBarTheme" >
+        <activity
+            android:name=".splashScreen"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TabTicketFragmentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TabYouFragmentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TabDiscoverFragment"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".loginScreen"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".eventScreen"/>
+    </application>
+
+</manifest>
