@@ -1,17 +1,14 @@
 package team.inventeaze.bookyourshow;
 
-import android.app.TabActivity;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
-import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
 
 import com.facebook.AppEventsLogger;
 
-public class MainActivity extends TabActivity {
+public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,24 +16,6 @@ public class MainActivity extends TabActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        /*TabHost tabhost = (TabHost)findViewById(android.R.id.tabhost);
-
-        TabSpec tab_ticket = tabhost.newTabSpec("Tickets");
-        TabSpec tab_you = tabhost.newTabSpec("You");
-        TabSpec tab_discover = tabhost.newTabSpec("Discover");
-
-        tab_ticket.setIndicator("Tickets");
-        tab_ticket.setContent(new Intent(this,TabTicketFragmentActivity.class));
-
-        tab_you.setIndicator("You");
-        tab_you.setContent(new Intent(this,TabYouFragmentActivity.class));
-
-        tab_discover.setIndicator("Discover");
-        tab_discover.setContent(new Intent(this,TabDiscoverFragment.class));
-
-        tabhost.addTab(tab_ticket);
-        tabhost.addTab(tab_you);
-        tabhost.addTab(tab_discover);*/
 
 
     }
