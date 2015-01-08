@@ -141,7 +141,7 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
                         @Override
                         public void onCompleted(GraphUser user, Response response) {
                             if (user != null) {
-                                String username = user.getFirstName() + " " + user.getLastName();
+                                String username = user.getFirstName() + user.getMiddleName() + user.getLastName();
                                 Toast.makeText(getApplicationContext(), "Success in fb login: " +username, Toast.LENGTH_LONG).show();
 
 

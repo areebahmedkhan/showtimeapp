@@ -19,7 +19,7 @@ public class MainActivity extends TabActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        TabHost tabhost = (TabHost)findViewById(android.R.id.tabhost);
+        /*TabHost tabhost = (TabHost)findViewById(android.R.id.tabhost);
 
         TabSpec tab_ticket = tabhost.newTabSpec("Tickets");
         TabSpec tab_you = tabhost.newTabSpec("You");
@@ -36,7 +36,7 @@ public class MainActivity extends TabActivity {
 
         tabhost.addTab(tab_ticket);
         tabhost.addTab(tab_you);
-        tabhost.addTab(tab_discover);
+        tabhost.addTab(tab_discover);*/
 
 
     }

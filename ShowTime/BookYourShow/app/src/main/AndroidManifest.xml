@@ -33,12 +33,6 @@
         </activity>
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".TabTicketFragmentActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TabYouFragmentActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TabDiscoverFragment"
-            android:screenOrientation="portrait"/>
         <activity android:name=".loginScreen"
             android:screenOrientation="portrait"
             />
