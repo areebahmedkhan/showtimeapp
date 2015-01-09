@@ -21,4 +21,7 @@
         <item>password</item>
     </string-array>
 
+
+    <color name="white">#fff</color>
+
 </resources>

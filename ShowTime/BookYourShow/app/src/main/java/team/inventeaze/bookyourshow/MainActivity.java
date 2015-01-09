@@ -8,16 +8,34 @@ import android.view.Window;
 
 import com.facebook.AppEventsLogger;
 
-public class MainActivity extends FragmentActivity {
+import team.inventeaze.bookyourshow.Listeners.IPageEventListeners;
+
+public class MainActivity extends FragmentActivity implements IPageEventListeners {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE); //we don't want any kind of title bar whatsoever lol
+
+        setContentView(R.layout.events_page_layout);
+
+
+        InitialzieElements();
+
+    }
+
+    public void InitialzieElements() {
+
+    }
 
 
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
     }
 
 
@@ -54,5 +72,23 @@ public class MainActivity extends FragmentActivity {
 
         // Logs 'install' and 'app activate' App Events.
         AppEventsLogger.activateApp(this);
+    }
+
+    /*
+    * Callback methods for views :p
+    * */
+    @Override
+    public void EventInPage(int viewId, String eventName, Object object) {
+
+    }
+
+    @Override
+    public void ViewPageDone(int viewId) {
+
+    }
+
+    @Override
+    public void ViewPageFinish(int viewId) {
+
     }
 }

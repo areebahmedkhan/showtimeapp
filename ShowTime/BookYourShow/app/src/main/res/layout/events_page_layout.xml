@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/menu_background"
+    android:weightSum="1.0">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="1.0"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"></RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <ImageView
+
+                android:id="@+id/imvLeftDrawerImage"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/left_drawer_icon"
+                android:layout_width="60dp"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_weight="0.025">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_weight="0.18">
+
+        <RelativeLayout
+            android:layout_weight="0.25"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:background="@drawable/tickets_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_weight="0.075">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_weight="0.18">
+
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:background="@drawable/left_side_icon_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:paddingRight="10dp"
+                android:paddingLeft="0dp"
+                android:weightSum="1.0"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.6">
+
+                    <RelativeLayout
+                        android:layout_weight="0.35"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/event_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_weight="0.19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <TextView
+
+                        android:paddingBottom="5dp"
+                        android:textSize="@dimen/iconTextFont"
+                        android:layout_centerInParent="true"
+                        android:text="EVENTS"
+                        android:fontFamily="@string/com_facebook_nearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+               </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:weightSum="1.0"
+                    android:layout_weight="0.21"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:layout_weight="0.7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="0dp"
+                        android:textSize="8sp"
+                        android:textColor="@color/white"
+                        android:layout_centerInParent="true"
+                        android:text="009499939"
+                        android:fontFamily="@string/com_facebook_nearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:background="@drawable/right_side_icon_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:paddingRight="10dp"
+                android:paddingLeft="0dp"
+                android:weightSum="1.0"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.6">
+
+                    <RelativeLayout
+                        android:layout_weight="0.35"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/movie_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_weight="0.19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <TextView
+
+                        android:paddingBottom="5dp"
+                        android:textSize="@dimen/iconTextFont"
+                        android:layout_centerInParent="true"
+                        android:text="MOVIES"
+                        android:fontFamily="@string/com_facebook_nearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:weightSum="1.0"
+                    android:layout_weight="0.21"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:layout_weight="0.37"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="0dp"
+                        android:textSize="8sp"
+                        android:textColor="@color/white"
+                        android:layout_centerInParent="true"
+                        android:text="009499939"
+                        android:fontFamily="@string/com_facebook_nearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_weight="0.05">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_weight="0.18">
+
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:background="@drawable/left_side_icon_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:paddingRight="10dp"
+                android:paddingLeft="0dp"
+                android:weightSum="1.0"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.6">
+
+                    <RelativeLayout
+                        android:layout_weight="0.30"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/play_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_weight="0.19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <TextView
+
+                        android:paddingBottom="5dp"
+                        android:textSize="@dimen/iconTextFont"
+                        android:layout_centerInParent="true"
+                        android:text="PLAYS"
+                        android:fontFamily="@string/com_facebook_nearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:weightSum="1.0"
+                    android:layout_weight="0.21"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:layout_weight="0.7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="0dp"
+                        android:textSize="8sp"
+                        android:textColor="@color/white"
+                        android:layout_centerInParent="true"
+                        android:text="009499939"
+                        android:fontFamily="@string/com_facebook_nearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:background="@drawable/right_side_icon_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:paddingRight="10dp"
+                android:paddingLeft="0dp"
+                android:weightSum="1.0"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+
+                    android:weightSum="1.0"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.6">
+
+                    <RelativeLayout
+                        android:layout_weight="0.35"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/concert_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_weight="0.19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <TextView
+
+                        android:paddingBottom="5dp"
+                        android:textSize="@dimen/iconTextFont"
+                        android:layout_centerInParent="true"
+                        android:text="CONCERTS"
+                        android:fontFamily="@string/com_facebook_nearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:weightSum="1.0"
+                    android:layout_weight="0.21"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:layout_weight="0.37"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"></LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="0dp"
+                        android:textSize="8sp"
+                        android:textColor="@color/white"
+                        android:layout_centerInParent="true"
+                        android:text="009499939"
+                        android:fontFamily="@string/com_facebook_nearby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_weight="0.05">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:orientation="horizontal"
+        android:layout_weight="0.18">
+
+        <RelativeLayout
+            android:layout_weight="0.25"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:background="@drawable/all_bottom_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

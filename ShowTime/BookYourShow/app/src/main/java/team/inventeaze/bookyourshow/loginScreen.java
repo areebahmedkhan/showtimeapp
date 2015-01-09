@@ -100,7 +100,7 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
 
     public void selectItem(int position){
         Fragment fragment = null;
-        try {
+      //  try {
             if (position == 1) {
                 fragment = new LoginEmailFragment();
             }
@@ -115,14 +115,21 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
                 return;
             }
 
+            //this is what you should do, catching is jugar :p in this case its not jugar always but
+            //here we can solve it in this way since we know why null pointer exception can occur :)..
+            if(fragment == null) {
+                Toast.makeText(this,"No Fragment Selected",Toast.LENGTH_LONG).show();
+                return;
+            }
+
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_left_out, R.anim.push_right_in, R.anim.push_right_out);
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
             transaction.commit();
-        }catch (NullPointerException ex){
-            Toast.makeText(this,"Not Set -- Null Pointer Exception Occurs",Toast.LENGTH_LONG).show();
-        }
+      //  }catch (NullPointerException ex){
+        //    Toast.makeText(this,"Not Set -- Null Pointer Exception Occurs",Toast.LENGTH_LONG).show();
+       // }
 
     }
 
