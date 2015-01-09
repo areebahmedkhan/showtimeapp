@@ -2,16 +2,33 @@ package team.inventeaze.bookyourshow;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.facebook.AppEventsLogger;
 
 import team.inventeaze.bookyourshow.Listeners.IPageEventListeners;
 
-public class MainActivity extends FragmentActivity implements IPageEventListeners {
+public class MainActivity extends FragmentActivity implements IPageEventListeners, View.OnClickListener {
 
+
+    ImageView imageViewEvents;
+    ImageView imageViewConcerts;
+    ImageView imageViewPlays;
+    ImageView imageViewMovies;
+    ImageView imageViewAllCategories;
+    ImageView imvLeftDrawer;
+
+
+
+    DrawerLayout leftDrawerLayout;
+
+    boolean isDrawerOpen = false;
 
 
     @Override
@@ -27,7 +44,30 @@ public class MainActivity extends FragmentActivity implements IPageEventListener
     }
 
     public void InitialzieElements() {
+        imageViewEvents = (ImageView) findViewById(R.id.imvevents);
+        imageViewConcerts = (ImageView) findViewById(R.id.imvconcerts);
+        imageViewMovies = (ImageView) findViewById(R.id.imvmovies);
+        imageViewPlays = (ImageView) findViewById(R.id.imvplays);
+        imageViewAllCategories = (ImageView) findViewById(R.id.imvallcategories);
+        imvLeftDrawer = (ImageView) findViewById(R.id.imvLeftDrawerImage);
 
+
+        imageViewPlays.setOnClickListener(this);
+        imageViewMovies.setOnClickListener(this);
+        imageViewConcerts.setOnClickListener(this);
+        imageViewEvents.setOnClickListener(this);
+        imvLeftDrawer.setOnClickListener(this);
+
+    }
+
+
+    public void ToggleDrawer() {
+        if(isDrawerOpen) {
+
+        }
+        else {
+
+        }
     }
 
 
@@ -90,5 +130,31 @@ public class MainActivity extends FragmentActivity implements IPageEventListener
     @Override
     public void ViewPageFinish(int viewId) {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.imvallcategories:
+                Toast.makeText(this,"Click All Cat",Toast.LENGTH_LONG).show();
+                break;
+
+            case R.id.imvconcerts:
+
+                break;
+
+            case R.id.imvevents:
+                break;
+
+            case R.id.imvmovies:
+                break;
+
+            case R.id.imvplays:
+                break;
+
+            case R.id.imvLeftDrawerImage:
+                ToggleDrawer();
+                break;
+        }
     }
 }

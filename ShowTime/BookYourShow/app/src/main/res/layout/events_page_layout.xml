@@ -6,6 +6,7 @@
     android:background="@drawable/menu_background"
     android:weightSum="1.0">
 
+
     <LinearLayout
         android:orientation="vertical"
         android:weightSum="1.0"
@@ -98,6 +99,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/imvevents"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/left_side_icon_back"
                 android:layout_width="match_parent"
@@ -163,7 +165,7 @@
                     android:layout_height="0dp">
 
                     <LinearLayout
-                        android:layout_weight="0.7"
+                        android:layout_weight="0.6"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"></LinearLayout>
 
@@ -191,6 +193,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/imvmovies"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/right_side_icon_back"
                 android:layout_width="match_parent"
@@ -258,7 +261,7 @@
                     android:layout_height="0dp">
 
                     <LinearLayout
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"></LinearLayout>
 
@@ -305,6 +308,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/imvplays"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/left_side_icon_back"
                 android:layout_width="match_parent"
@@ -371,7 +375,7 @@
                     android:layout_height="0dp">
 
                     <LinearLayout
-                        android:layout_weight="0.7"
+                        android:layout_weight="0.6"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"></LinearLayout>
 
@@ -399,6 +403,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/imvconcerts"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/right_side_icon_back"
                 android:layout_width="match_parent"
@@ -466,7 +471,7 @@
                     android:layout_height="0dp">
 
                     <LinearLayout
-                        android:layout_weight="0.37"
+                        android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"></LinearLayout>
 
@@ -522,6 +527,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/imvallcategories"
                 android:layout_centerInParent="true"
                 android:background="@drawable/all_bottom_icon"
                 android:layout_width="match_parent"
