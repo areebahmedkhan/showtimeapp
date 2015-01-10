@@ -67,24 +67,35 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/ticket_logo"
                 android:layout_centerInParent="true"
                 android:background="@drawable/tickets_icon"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-
         </RelativeLayout>
 
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:weightSum="1.0"
         android:orientation="horizontal"
         android:layout_weight="0.075">
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHOOSE A CATEGORY"
+            android:id="@+id/txt_category"
+            android:textColor="#c50a0a"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,7 +112,7 @@
             <ImageView
                 android:id="@+id/imvevents"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/left_side_icon_back"
+                android:background="@drawable/button_pressed_left"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -146,8 +157,9 @@
                     android:layout_height="0dp">
 
                     <TextView
-
+                        android:id="@+id/txt_events"
                         android:paddingBottom="5dp"
+                        android:textColor="@color/button_pressed_color"
                         android:textSize="@dimen/iconTextFont"
                         android:layout_centerInParent="true"
                         android:text="EVENTS"
@@ -195,7 +207,7 @@
             <ImageView
                 android:id="@+id/imvmovies"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/right_side_icon_back"
+                android:background="@drawable/button_pressed_right"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -242,8 +254,9 @@
                     android:layout_height="0dp">
 
                     <TextView
-
+                        android:id="@+id/txt_movie"
                         android:paddingBottom="5dp"
+                        android:textColor="@color/button_pressed_color"
                         android:textSize="@dimen/iconTextFont"
                         android:layout_centerInParent="true"
                         android:text="MOVIES"
@@ -266,14 +279,14 @@
                         android:layout_height="match_parent"></LinearLayout>
 
                     <TextView
-                        android:layout_marginTop="0dp"
+                        android:layout_marginTop="-2dp"
                         android:textSize="8sp"
                         android:textColor="@color/white"
                         android:layout_centerInParent="true"
                         android:text="009499939"
                         android:fontFamily="@string/com_facebook_nearby"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -310,7 +323,7 @@
             <ImageView
                 android:id="@+id/imvplays"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/left_side_icon_back"
+                android:background="@drawable/button_pressed_left"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -356,14 +369,15 @@
                     android:layout_height="0dp">
 
                     <TextView
-
+                        android:id="@+id/txt_plays"
                         android:paddingBottom="5dp"
                         android:textSize="@dimen/iconTextFont"
                         android:layout_centerInParent="true"
+                        android:textColor="@color/button_pressed_color"
                         android:text="PLAYS"
                         android:fontFamily="@string/com_facebook_nearby"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content" />
 
                 </RelativeLayout>
 
@@ -405,7 +419,7 @@
             <ImageView
                 android:id="@+id/imvconcerts"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/right_side_icon_back"
+                android:background="@drawable/button_pressed_right"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -452,9 +466,10 @@
                     android:layout_height="0dp">
 
                     <TextView
-
+                        android:id="@+id/txt_concert"
                         android:paddingBottom="5dp"
                         android:textSize="@dimen/iconTextFont"
+                        android:textColor="@color/button_pressed_color"
                         android:layout_centerInParent="true"
                         android:text="CONCERTS"
                         android:fontFamily="@string/com_facebook_nearby"
@@ -476,14 +491,14 @@
                         android:layout_height="match_parent"></LinearLayout>
 
                     <TextView
-                        android:layout_marginTop="0dp"
+                        android:layout_marginTop="-2dp"
                         android:textSize="8sp"
                         android:textColor="@color/white"
                         android:layout_centerInParent="true"
                         android:text="009499939"
                         android:fontFamily="@string/com_facebook_nearby"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -529,9 +544,22 @@
             <ImageView
                 android:id="@+id/imvallcategories"
                 android:layout_centerInParent="true"
-                android:background="@drawable/all_bottom_icon"
+                android:background="@drawable/button_pressed_bottom"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/txt_all"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/iconTextFont"
+                android:textColor="@color/button_pressed_color"
+                android:layout_centerInParent="true"
+                android:text="ALL"
+                android:fontFamily="@string/com_facebook_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"/>
 
         </RelativeLayout>
 

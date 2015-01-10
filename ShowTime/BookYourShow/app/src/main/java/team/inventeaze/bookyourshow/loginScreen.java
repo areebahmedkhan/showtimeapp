@@ -31,12 +31,21 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
 
     ListView login_list;
     boolean isSignUpClick = false;
+    boolean isLoginClick = false;
+    FragmentManager fm;
+    int login_value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_screen);
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        Intent intent = getIntent();
+        login_value = intent.getIntExtra("login",0);
+        if(login_value == 1){
+            Log.d("Login Value", ""+login_value);
+            call_login_fragment();
+        }
         init();
     }
 
@@ -47,11 +56,12 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
         login_list.setAdapter(adapter);
     }
 
-    MenuItem save_btn;
+    MenuItem save_btn , login_btn;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
-        save_btn = (MenuItem)menu.findItem(R.id.action_save);
+        save_btn = menu.findItem(R.id.action_save);
+        login_btn = menu.findItem(R.id.action_login);
         return true;
     }
 
@@ -59,6 +69,9 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        isSignUpClick = false;
+        isLoginClick = false;
+        invalidateOptionsMenu();
         overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
     }
 
@@ -69,22 +82,47 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
         }else{
             save_btn.setVisible(false);
         }
+
+        if(isLoginClick){
+            login_btn.setVisible(true);
+        }else{
+            login_btn.setVisible(false);
+        }
         return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
         switch (item.getItemId()){
             case android.R.id.home:
-                FragmentManager fm= getSupportFragmentManager();
+                fm= getSupportFragmentManager();
                 if(fm.getBackStackEntryCount()>0){
                     fm.popBackStack();
                     isSignUpClick = false;
+                    isLoginClick = false;
                     invalidateOptionsMenu();
                 }else{
                     finish();
                     overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
                 }
+            break;
+
+            case R.id.action_save:
+                Log.d("Save", "Save click");
+                intent = new Intent(this,loginScreen.class);
+                intent.putExtra("login",1);
+                startActivity(intent);
+                overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out);
+                finish();
+            break;
+
+            case R.id.action_login:
+                Log.d("Save", "Login click");
+                intent = new Intent(this,MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out);
+                finish();
             break;
 
 
@@ -103,6 +141,8 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
       //  try {
             if (position == 1) {
                 fragment = new LoginEmailFragment();
+                isLoginClick = true;
+                invalidateOptionsMenu();
             }
             else if (position == 2) {
                 fragment = new SignUpFragment();
@@ -131,6 +171,18 @@ public class loginScreen extends FragmentActivity implements AdapterView.OnItemC
         //    Toast.makeText(this,"Not Set -- Null Pointer Exception Occurs",Toast.LENGTH_LONG).show();
        // }
 
+    }
+
+    public void call_login_fragment(){
+        Fragment fragment = new LoginEmailFragment();
+        isLoginClick = true;
+        invalidateOptionsMenu();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.push_left_in, R.anim.push_left_out, R.anim.push_right_in, R.anim.push_right_out);
+        transaction.replace(R.id.content_frame, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     public void LoginWithFacebook() {
